@@ -1,0 +1,101 @@
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="w-100">
+                        <h2 class="text-start">Customer Details</h2>
+                        <div class="text-end">
+                            <a class="btn btn-light" href="" style="margin-top: -68px;" (click)="SY.BACK()"> Back </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped verticle-middle table-responsive-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <th>Name</th>
+                                    <td>{{LH.name? LH.name : 'N/A'}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <td>
+                                        <span>{{LH.email? LH.email : 'N/A'}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Mobile</th>
+                                    <td>
+                                        <span>{{LH.phone? LH.phone : 'N/A'}}</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>Date of Birth</th>
+                                    <td>{{LH.dob? LH.dob : 'N/A'}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Gender</th>
+                                    <td>{{LH.gender? LH.gender : 'N/A'}}</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Orders</th>
+                                    <td>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#staticBackdrop" (click)="openOrdersModal(LH.orders)">
+                                            Show all Orders
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="staticBackdrop" aria-hidden="true"
+                                            style="display: none;">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="staticBackdropLabel">All Orders</h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">×</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="position-relative">
+                                                            <hr class="my-2">
+                                                            <span>Delivery Date: Mar 22, 2024</span>,
+                                                            <span>Products: 6</span>
+                                                            <a href="https://adminlaundry.razinsoft.com/orders/410"
+                                                                class="btn btn-info p-1 px-2 ml-2 position-absolute"
+                                                                style="right:0; bottom:5px">
+                                                                <i class="fa fa-eye"></i>
+                                                            </a>
+                                                            <hr class="my-2">
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-dark"
+                                                            data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

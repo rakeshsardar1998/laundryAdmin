@@ -1,0 +1,42 @@
+/* Modal Backdrop */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #ffffff; /* white background */
+    border-radius: 8px; /* rounded corners */
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /* shadow effect */
+}
+
+/* Modal Header */
+.modal-header {
+    background-color: #f8f9fa; /* light gray background */
+    border-bottom: 1px solid #dee2e6; /* bottom border */
+    border-radius: 8px 8px 0 0; /* rounded corners, except at the bottom */
+}
+
+.modal-header .modal-title {
+    color: #343a40; /* dark text color */
+}
+
+.modal-header .close {
+    color: #343a40; /* dark text color */
+    opacity: 0.5; /* semi-transparent */
+    transition: opacity 0.3s ease;
+}
+
+.modal-header .close:hover {
+    opacity: 1; /* fully visible on hover */
+}
+
+.modal_close {
+    font-size: 10px !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: 0 0 0 0 white !important;
+}
+.action{
+    cursor: pointer;
+}

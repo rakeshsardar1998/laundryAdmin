@@ -1,0 +1,103 @@
+.W100 {
+      width: 100%;
+}
+
+.ERROR {
+      color: red;
+      padding: 5px;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+      cursor: pointer;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+      background-color: whitesmoke;
+}
+
+.FXROW {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.gr {
+      display: flex;
+      align-items: center;
+      gap: 100px;
+}
+
+.gr>*:nth-child(1) {
+      flex: 1;
+      margin-left: 20px;
+}
+
+.gr>*:nth-child(2) {
+      justify-content: end;
+      margin-right: 20px
+}
+
+;
+
+.search_input {
+      border: none !important;
+      outline: none !important;
+}
+
+.search_input:focus {
+      box-shadow: 0 0 6px 1px skyblue !important;
+}
+
+/* .rounded_button {
+      border-radius: 50% !important;
+      padding: 7px 15px !important;
+      background-color: darkorange !important;
+} */
+
+.card_body2 {
+      padding: 0px !important;
+      padding-bottom: 15px !important;
+}
+
+.card_body3 {
+      padding: 0px 0px !important;
+      margin: 0px 20px;
+}
+
+table {
+      border: 1px solid rgb(214, 214, 214) !important;
+      border-collapse: collapse !important;
+      margin-bottom: 10px !important;
+}
+
+tr th,
+td {
+      border-right: 1px solid rgb(207, 207, 207) !important;
+}
+
+.loader-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.7);
+      /* Semi-transparent overlay */
+}
+
+.mat-spinner {
+      width: 50px;
+      height: 50px;
+}
+
+@media (max-width: 768px) {
+
+      /* Adjust loader size for smaller screens */
+      .mat-spinner {
+            width: 30px;
+            height: 30px;
+      }
+}

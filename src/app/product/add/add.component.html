@@ -1,0 +1,79 @@
+<div class="card mx-3 my-3" *ngIf="PRODFR" [formGroup]="PRODFR">
+      <div class="card-header">
+          <div class="fs-5 fw-normal">{{ isEdit ? 'Edit Product' : 'Add New Product' }}</div>
+          <div class="text-secondary mt-1"><small>{{ isEdit ? 'Edit Product By ProductId' : 'Create A Product' }}</small></div>
+      </div>
+      <div class="card-body">
+          <!-- Loader -->
+          <div *ngIf="loading" class="loader-overlay">
+              <mat-spinner diameter="50" color="primary"></mat-spinner>
+          </div>
+          <div class="card-input-div">
+              <div>
+                  <label for="productName">Product Name<span>*</span></label>
+                  <input type="text" class="card-input" id="productName" formControlName="productName"
+                      placeholder="Enter product Name">
+                  <div *ngIf="PRODFR.get('productName')?.invalid && PRODFR.get('productName')?.touched" class="text-danger">Product Name is required</div>
+              </div>
+              <div>
+                  <label for="thumbnailImage">Image</label>
+                  <input type="text" class="card-input" id="thumbnailImage" formControlName="thumbnailImage"
+                      placeholder="Enter Image URL">
+              </div>
+          </div>
+          <div class="card-input-div">
+              <div>
+                  <label for="price">Price<span>*</span></label>
+                  <input type="text" class="card-input" id="price" formControlName="price"
+                      placeholder="Enter Price">
+                  <div *ngIf="PRODFR.get('price')?.invalid && PRODFR.get('price')?.touched" class="text-danger">Price is required</div>
+              </div>
+              <div class="custom-dropdown">
+                  <label for="categoryId">Category<span>*</span></label>
+                  <select class="card-input" id="categoryId" formControlName="categoryId">
+                      <option value="" disabled selected>Select Category</option>
+                      <option *ngFor="let item of categoryData" [value]="item.categoryId" class="card-option">
+                          {{ item.categoryName }}</option>
+                  </select>
+                  <div *ngIf="PRODFR.get('categoryId')?.invalid && PRODFR.get('categoryId')?.touched" class="text-danger">Category is required</div>
+              </div>
+              <div class="custom-dropdown">
+                  <label for="subCategoryId">SubCategory<span>*</span></label>
+                  <select class="card-input" id="subCategoryId" formControlName="subCategoryId">
+                      <option value="" disabled selected>Select SubCategory</option>
+                      <option *ngFor="let item of subCategoryData" [value]="item.subCategoryId" class="card-option">
+                          {{ item.subCategoryName }}</option>
+                  </select>
+                  <div *ngIf="PRODFR.get('subCategoryId')?.invalid && PRODFR.get('subCategoryId')?.touched" class="text-danger">SubCategory is required</div>
+              </div>
+              <div>
+                  <label for="serial">Serial</label>
+                  <input type="number" class="card-input" id="serial" formControlName="serial"
+                      placeholder="Enter Serial">
+              </div>
+              <div class="custom-dropdown" *ngIf="isEdit">
+                  <label for="isActive">Active Status</label>
+                  <select class="card-input" id="isActive" formControlName="isActive">
+                      <option [value]="true" class="card-option">ACTIVE</option>
+                      <option [value]="false" class="card-option">INACTIVE</option>
+                  </select>
+                  <span class="custom-dropdown-arrow"></span>
+              </div>
+              <div>
+                  <label for="longDescription">Long Description</label>
+                  <textarea class="card-textarea" id="longDescription" formControlName="longDescription"
+                      placeholder="Enter Long Description"></textarea>
+              </div>
+              <div>
+                  <label for="shortDescription">Short Description</label>
+                  <textarea class="card-textarea" id="shortDescription" formControlName="shortDescription"
+                      placeholder="Enter Short Description"></textarea>
+              </div>
+          </div>
+      </div>
+      <div class="card-footer bg-light">
+          <button type="button" class="btn btn-secondary float-start" (click)="SY.BACK()">Cancel</button>
+          <button type="submit" class="btn btn-primary float-end" [disabled]="!PRODFR.valid" (click)="SAVE()">Save</button>
+      </div>
+  </div>
+  

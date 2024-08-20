@@ -1,0 +1,55 @@
+<div class="card mx-3 my-3" *ngIf="USRFR" [formGroup]="USRFR">
+    <div class="card-header">
+        <div class="fs-5 fw-normal">{{isEdit ? 'Edit User' : 'Add New User'}}</div>
+        <div class="text-secondary mt-1"><small> {{isEdit ? 'Edit User By UserId' : 'Create A User'}}</small></div>
+    </div>
+    <div class="card-body">
+                <!-- Loader -->
+                <div *ngIf="loading" class="loader-overlay">
+                    <mat-spinner diameter="50" color="primary"></mat-spinner>
+                  </div>
+        <div class="card-input-div">
+            <div>
+                <label for="Name"><span>*</span>Name</label>
+                <input type="text" class="card-input" id="name" formControlName="name" placeholder="Enter Name">
+                <div *ngIf="USRFR.get('name')?.invalid && USRFR.get('name')?.touched"
+                class="text-danger">Name is required</div>
+            </div>
+            <div>
+                <label for="Email"><span>*</span>Email</label>
+                <input type="text" class="card-input" id="Email" formControlName="email" placeholder="Enter Email" [attr.disabled]="isEdit ? true : null">
+                <div *ngIf="USRFR.get('email')?.invalid && USRFR.get('email')?.touched"
+                class="text-danger">Email is required</div>
+            </div>
+        </div>
+        <div class="card-input-div">
+            <div *ngIf="!isEdit">
+                <label for="Name"><span>*</span>Password</label>
+                <input type="password" class="card-input" id="Password" formControlName="password" placeholder="Enter Password" >
+                <div *ngIf="USRFR.get('password')?.invalid && USRFR.get('password')?.touched"
+                class="text-danger">Password is required</div>
+            </div>
+            <div class="custom-dropdown">
+                <label for="role"><span>*</span>Role</label>
+                <select class="card-input" id="role" formControlName="roleId" >
+                    <option value="" disabled selected>Select Role</option>
+                    <option *ngFor="let item of roles" [value]="item.roleId" class="card-option">{{item.roleName}}</option>
+                </select>
+                <span class="custom-dropdown-arrow"></span>
+                <div *ngIf="USRFR.get('roleId')?.invalid && USRFR.get('roleId')?.touched" class="text-danger">RoleId Type is required</div>
+            </div> 
+            <div class="custom-dropdown" *ngIf="isEdit">
+                <label for="role">Active Status</label>
+                <select class="card-input" id="role" formControlName="isActive">
+                    <option [value]="true" class="card-option">ACTIVE</option>
+                    <option [value]="false" class="card-option">INACTIVE</option>
+                </select>
+                <span class="custom-dropdown-arrow"></span>
+            </div>                        
+        </div>
+    </div>
+    <div class="card-footer bg-light">
+        <button type="button" class="btn btn-secondary float-start" (click)="SY.BACK()">Cancel</button>
+        <button type="submit" class="btn btn-primary float-end" [disabled]="!USRFR.valid" (click)="SAVE()">Save</button>
+    </div>
+</div>

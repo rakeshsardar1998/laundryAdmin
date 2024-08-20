@@ -1,0 +1,37 @@
+<div class="modal fade show" aria-modal="true" role="dialog"
+    style="padding-right: 17px; display: block;">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div *ngIf="loading" class="loader-overlay">
+                <mat-spinner diameter="50" color="primary"></mat-spinner>
+            </div>
+            <div class="modal-header d-flex justify-content-between">
+                <h1 class="modal-title" id="staticBackdropLabel">Labels</h1>
+                <div>
+                    <button type="button" class="btn btn-close modal_close" (click)="closeModal()"></button>
+                </div>
+            </div>
+            <div class="modal-body" id="modal-body-content">
+                <div class="row justify-content-evenly">
+                    <ng-container *ngFor="let item of LH">
+                        <div class="col-sm-12 col-md-4" >
+                            <div class="card text-dark bg-white shadow bg-body rounded my-2 p-2" style="height: 90%;">
+                                <h4 class="m-0">Name: {{item.name}} </h4>
+                                <h4 class="m-0">Order Id: {{item.orderId}}</h4>
+                                <h4 class="m-0">Category: {{item.category}}</h4>
+                                <h4 class="m-0">SubCategory: {{item.subCategoryName}}</h4>
+                                <ul *ngFor="let items of item?.item">
+                                    <li class="item">{{items.productName}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

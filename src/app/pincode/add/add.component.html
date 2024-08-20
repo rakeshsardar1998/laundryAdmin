@@ -1,0 +1,31 @@
+<div class="card mx-3 my-3"*ngIf="PINFR" [formGroup]="PINFR">
+    <div class="card-header">
+        <div class="fs-5 fw-normal">{{ isEdit ? 'Edit Pincode' : 'Add New Pincode' }}</div>
+        <div class="text-secondary mt-1"><small>{{ isEdit ? 'Edit Pincode By PincodeId' : 'Create A Pincode' }}</small></div>
+    </div>
+    <div class="card-body">
+        <!-- Loader -->
+        <div *ngIf="loading" class="loader-overlay">
+            <mat-spinner diameter="50" color="primary"></mat-spinner>
+        </div>
+        <div class="card-input-div">
+            <div>
+                <label for="pincode">Pincode<span>*</span></label>
+                <input type="text" class="card-input" id="pincode" formControlName="pincode" placeholder="Enter Pincode">
+                <div *ngIf="PINFR.get('pincode')?.invalid && PINFR.get('pincode')?.touched" class="text-danger">Pincode is required</div>
+            </div>
+            <div class="custom-dropdown" *ngIf="isEdit">
+                <label for="isActive">Active Status</label>
+                <select class="card-input" id="isActive" formControlName="isActive">
+                    <option [value]="true" class="card-option">ACTIVE</option>
+                    <option [value]="false" class="card-option">INACTIVE</option>
+                </select>
+                <span class="custom-dropdown-arrow"></span>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer bg-light">
+        <button type="button" class="btn btn-secondary float-start" (click)="SY.BACK()">Cancel</button>
+        <button type="submit" class="btn btn-primary float-end" [disabled]="!PINFR.valid" (click)="SAVE()">Save</button>
+    </div>
+</div>

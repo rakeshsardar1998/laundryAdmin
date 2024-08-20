@@ -1,0 +1,37 @@
+<!-- change-order-modal.component.html -->
+<div class="modal fade show" id="staticBackdrop" aria-modal="true" role="dialog"
+  style="padding-right: 17px; display: block;">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="staticBackdropLabel">
+          Change Refund Status
+        </h2>
+        <button type="button" class="btn btn-close modal_close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="FR" (ngSubmit)="SAVE()">
+          <div class="form-group">
+            <label for="refundStatusId">Refund Status</label>
+            <select class="form-control" id="refundStatusId" formControlName="refundStatusId">
+              <option value="" disabled selected>Select Category</option>
+              <option *ngFor="let item of DATA" [value]="item.refundStatusId"
+                [disabled]="item.refundStatusId <= previousRefundStatuses">
+                {{item.refundStatusName}}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="notes">Notes</label>
+            <textarea rows="3" class="form-control" id="adminNotes" formControlName="adminNotes"
+              placeholder="Enter Notes"></textarea>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

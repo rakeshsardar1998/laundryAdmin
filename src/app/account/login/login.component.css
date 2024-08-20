@@ -1,0 +1,92 @@
+/* Style for the login form section */
+.login-form-section {
+      padding: 66px;
+  }
+  
+  /* Style for the login form container */
+  .login {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+  }
+  
+  /* Style for the form header */
+  .header {
+      margin-bottom: 15px;
+  }
+  
+  /* Style for the logo image */
+  .header img {
+      display: block;
+      margin: 0 auto 15px;
+  }
+  
+  /* Style for the form title */
+  .header h3 {
+      font-size: 26px;
+      font-weight: bold;
+      margin-top: 2px;
+      margin-bottom: 16px;
+  }
+  
+  /* Style for the form description */
+  .header p {
+      font-size: 14px;
+      margin-bottom: 20px;
+  }
+  
+  /* Style for the input boxes */
+  .inputBox {
+      margin-bottom: 30px;
+  }
+  
+  /* Style for the input fields */
+  .input {
+      position: relative;
+  }
+  
+  .inputfield {
+      width: 100%;
+      padding-right: 40px;
+  }
+  .inputfield{
+      padding: 14px;
+  }
+  
+  /* Style for the password toggle icon */
+  .eye {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+  }
+  
+  /* Style for the error messages */
+  .text-danger {
+      color: #dc3545;
+      font-size: 14px;
+  }
+  
+  /* Style for the login button */
+  .btncustom {
+      background-color: #00b894 !important;
+      font-size: 16px !important;
+      font-weight: bold !important;
+      color: #fff !important;
+      padding: 16px 0 !important;
+  }
+  
+  .btncustom:hover {
+      background-color: #b6f7ea;
+  }
+  
+  /* Style for the background image container */
+  .background-image-container {
+      background-image: url('https://adminlaundry.razinsoft.com/web/bg/login.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 99vh; /* Set the height to cover the viewport height */
+  }
+  

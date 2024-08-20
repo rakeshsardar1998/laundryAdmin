@@ -1,0 +1,84 @@
+<div class="card mx-3 my-3"  *ngIf="COUPONTFR" [formGroup]="COUPONTFR">
+    <div class="card-header">
+      <div class="fs-5 fw-normal">{{isEdit ? 'Edit Coupon' : 'Add New Coupon'}}</div>
+      <div class="text-secondary mt-1"><small> {{isEdit ? 'Edit Coupon Data' : 'Create A Coupon'}}</small></div>
+    </div>
+    <div class="card-body">
+      <!-- Loader -->
+      <div *ngIf="loading" class="loader-overlay">
+        <mat-spinner diameter="50" color="primary"></mat-spinner>
+      </div>
+      <div class="card-input-div">
+        <!-- Coupon Type -->
+        <div class="custom-dropdown">
+          <label for="couponTypeId">Coupon Type<span>*</span></label>
+          <select class="card-input" id="couponTypeId" formControlName="couponTypeId">
+            <option *ngFor="let item of couponType" [value]="item.couponTypeId" class="card-option">{{item.couponTypeName}}</option>
+          </select>
+          <span class="custom-dropdown-arrow"></span>
+          <div *ngIf="COUPONTFR.get('couponTypeId')?.invalid && COUPONTFR.get('couponTypeId')?.touched" class="text-danger">Coupon Type is required</div>
+        </div>
+        <!-- Coupon Code -->
+        <div>
+          <label for="couponCode">Coupon Code<span>*</span></label>
+          <input type="text" class="card-input" id="couponCode" formControlName="couponCode" placeholder="Enter Coupon Code">
+          <div *ngIf="COUPONTFR.get('couponCode')?.invalid && COUPONTFR.get('couponCode')?.touched" class="text-danger">Coupon Code is required</div>
+        </div>
+        <!-- Discount Type -->
+        <div class="custom-dropdown">
+          <label for="discountType">Discount Type<span>*</span></label>
+          <select class="card-input" id="discountType" formControlName="discountType">
+            <option [value]="'FLAT'" class="card-option">FLAT</option>
+            <option [value]="'PERCENTAGE'" class="card-option">PERCENTAGE</option>
+          </select>
+          <span class="custom-dropdown-arrow"></span>
+          <div *ngIf="COUPONTFR.get('discountType')?.invalid && COUPONTFR.get('discountType')?.touched" class="text-danger">Discount Type is required</div>
+        </div>
+        <!-- Expiry Date -->
+        <div>
+          <label for="couponExpiryDate">Expiry Date</label>
+          <input type="date" class="card-input" id="couponExpiryDate" formControlName="couponExpiryDate" placeholder="Enter Coupon Expiry Date">
+        </div>
+        <!-- Total Usage Limit -->
+        <div>
+          <label for="totalUsageLimit">Total Usage Limit</label>
+          <input type="number" class="card-input" id="totalUsageLimit" formControlName="totalUsageLimit" placeholder="Enter Total Usage Limit">
+        </div>
+        <!-- Minimum Order Amount -->
+        <div>
+          <label for="minOrderAmount">Minimum Order Amount</label>
+          <input type="number" class="card-input" id="minOrderAmount" formControlName="minOrderAmount" placeholder="Enter Minimum Order Amount">
+        </div>
+        <!-- Maximum Order Amount -->
+        <div>
+          <label for="maxOrderAmount">Maximum Order Amount</label>
+          <input type="number" class="card-input" id="maxOrderAmount" formControlName="maxOrderAmount" placeholder="Enter Maximum Order Amount">
+        </div>
+        <!-- Discount Amount -->
+        <div>
+          <label for="discountAmount">Discount Amount<span>*</span></label>
+          <input type="number" class="card-input" id="discountAmount" formControlName="discountAmount" placeholder="Enter Discount Amount">
+          <div *ngIf="COUPONTFR.get('discountAmount')?.invalid && COUPONTFR.get('discountAmount')?.touched" class="text-danger">Discount Amount is required</div>
+        </div>
+        <!-- Active Status (for edit mode) -->
+        <div class="custom-dropdown" *ngIf="isEdit">
+          <label for="isActive">Active Status</label>
+          <select class="card-input" id="isActive" formControlName="isActive">
+            <option [value]="true" class="card-option">ACTIVE</option>
+            <option [value]="false" class="card-option">INACTIVE</option>
+          </select>
+          <span class="custom-dropdown-arrow"></span>
+        </div>
+        <!-- Coupon Descriptions -->
+        <div>
+          <label for="couponDescriptions">Coupon Descriptions</label>
+          <textarea rows="1" cols="20" class="form-control mt-1" id="couponDescriptions" formControlName="couponDescriptions" placeholder="Enter Coupon Descriptions"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button type="button" class="btn btn-secondary float-start" (click)="SY.BACK()">Cancel</button>
+      <button type="submit" class="btn btn-primary float-end" [disabled]="!COUPONTFR.valid" (click)="SAVE()">Save</button>
+    </div>
+  </div>
+  

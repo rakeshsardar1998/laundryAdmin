@@ -1,0 +1,81 @@
+<div class="PAGE">
+  <nav *ngIf="SY.ISIN()">
+    <mat-toolbar class="navbar-topNav">
+      <mat-toolbar-row class="toolbar-row navbar-topNav-row">
+        <div class="navbar-topNav_list">
+          <button class="mat_icon_button" *ngIf="SN_BUTN()" (click)="SN_VIEW(SDNAV)">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <span class="topnav_Text">{{SY.GA.APLTX}}</span>
+          <span class="SP0">&#9656;</span>
+          <span class="topnav_Text">{{SY.GA.PAGTX}}</span>
+        </div>
+        <div class="nav-icons">
+          <div class="dropdown" (click)="toggleDropdown2()">
+            <button class="notification_button" type="button">
+              <i class="fa-solid fa-briefcase"></i>
+              <div id="total">{{data1?.unreadCount}}</div>
+            </button>
+            <ul class="dropdown-menu" [class.show]="isOpen2">
+              <li *ngFor="let option of data1?.data">
+                <a class="dropdown-item border-bottom" (click)="ITEM(option)" [ngClass]="{'notRead': !option.isRead}">
+                  {{ option.notificationTitle }}
+                  <br>
+                  <span>{{ option.createdAt | date: 'medium' }}</span>
+                </a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="dropdown" (click)="toggleDropdown()">
+            <button class="notification_button" type="button">
+              <i class="fa-regular fa-bell"></i>
+              <div id="total">{{data?.unreadCount}}</div>
+            </button>
+            <ul class="dropdown-menu" [class.show]="isOpen">
+              <li *ngFor="let option of data?.data">
+                <a class="dropdown-item border-bottom" (click)="ITEM(option)" [ngClass]="{'notRead': !option.isRead}">
+                  {{ option.notificationTitle }}
+                  <br>
+                  <span>{{ option.createdAt | date: 'medium' }}</span>
+                </a>
+              </li>
+            </ul>
+
+          </div>
+          <button mat-button [matMenuTriggerFor]="menu" class="navbar-user"><i class="fa-regular fa-user"></i></button>
+          <mat-menu #menu="matMenu">
+            <div class="user_menu">
+              <div class="user_logo">
+                <img src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Free-Download.png" alt="">
+              </div>
+              <div class="user-name">{{SY.GU.name}}</div>
+              <div class="user-name2">
+                <!-- {{SY.GU.name}} -->
+              </div>
+              <div class="horizontal_line"></div>
+              <div class="user_footer">
+                <button class="user_footer_button"><i class="fa-regular fa-user"></i>
+                  <div class="user_footer_text" (click)="viewProfile()">Profile</div>
+                </button>
+                <button class="user_footer_button"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  <div class="user_footer_text" (click)="logout();">Log Out</div>
+                </button>
+              </div>
+            </div>
+          </mat-menu>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </nav>
+  <main>
+    <mat-sidenav-container class="FULL">
+      <mat-sidenav #SDNAV class="LEFT offcanvas_main" [opened]="SN_OPEN()" [mode]="SN_MODE()">
+        <zx-menu [NAVID]="SDNAV"></zx-menu>
+      </mat-sidenav>
+      <mat-sidenav-content class="P1">
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </main>
+</div>

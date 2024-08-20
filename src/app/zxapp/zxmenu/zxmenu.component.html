@@ -1,0 +1,36 @@
+<mat-nav-list>
+    <ng-container *ngFor="let menuItem of menuItems">
+        <div *ngIf="!menuItem.children; else hasChildren" 
+            [routerLink]="[menuItem.NAVID]" 
+            class="tab_list2" 
+            (click)="ONCLICK(menuItem)"
+            [class.selected]="isActive(menuItem)">
+            <div class="nav_list2">
+                <mat-icon class="nav_icon2">{{ menuItem.NVICO }}</mat-icon> {{ menuItem.NAVTX }}
+            </div>
+        </div>
+        <ng-template #hasChildren>
+            <div class="tab_list2 tab_list3" 
+                (click)="toggleCollapse(menuItem.NAVID)"
+                [class.selected]="isActive(menuItem)">
+                <div class="nav_list2">
+                    <mat-icon class="nav_icon2">{{ menuItem.NVICO }}</mat-icon> {{ menuItem.NAVTX }}
+                </div>
+                <mat-icon class="dropdown-icon" *ngIf="menuItem.children">
+                    {{ isCollapsed[menuItem.NAVID] ? 'expand_more' : 'expand_less' }}
+                </mat-icon>
+            </div>
+            <div class="collapse collapse_list" [class.show]="!isCollapsed[menuItem.NAVID]">
+                <mat-nav-list>
+                    <a *ngFor="let subMenuItem of menuItem.children" 
+                        [routerLink]="[subMenuItem.NAVID]" 
+                        (click)="ONCLICK(subMenuItem)" 
+                        class="nav_list2 nav_list3"
+                        [class.selected]="isActive(subMenuItem)">
+                        <mat-icon class="nav_icon2">{{ subMenuItem.NVICO }}</mat-icon> {{ subMenuItem.NAVTX }}
+                    </a>
+                </mat-nav-list>
+            </div>
+        </ng-template>
+    </ng-container>
+</mat-nav-list>

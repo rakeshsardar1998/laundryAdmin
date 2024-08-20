@@ -1,0 +1,373 @@
+.drop-down {
+    display: inline-block;
+    position: relative;
+}
+
+
+.drop-down-items {
+    position: absolute;
+    background: #f2f2f2;
+    width: 100%;
+    text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.collapse:not(.show) {
+    display: none;
+}
+
+td .badge {
+    margin-bottom: 4px;
+    margin-left: 2px;
+}
+
+.card .table td,
+.card .table th {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+.fa-star:before {
+    content: "\f005";
+}
+
+.rate {
+    color: rgb(255, 166, 0)
+}
+
+.unrate {
+    color: rgb(136, 136, 136)
+}
+
+.button {
+    margin: 10px;
+}
+
+.card {
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+}
+
+.card-body {
+    padding: 0 20px 20px 20px;
+}
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+ul.list-unstyled {
+  margin-top: 1rem;
+  padding-left: 0;
+}
+
+ul.list-unstyled li {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.fa-caret-right {
+  color: #007bff;
+  margin-right: 5px;
+}
+
+
+
+/* Activity */
+/* .dashboard .activity {
+    font-size: 14px;
+  }
+  
+  .dashboard .activity .activity-item .activite-label {
+    color: #888;
+    position: relative;
+    flex-shrink: 0;
+    flex-grow: 0;
+    min-width: 64px;
+  }
+  
+  .dashboard .activity .activity-item .activite-label::before {
+    content: "";
+    position: absolute;
+    right: -11px;
+    width: 4px;
+    top: 0;
+    bottom: 0;
+    background-color: #eceefe;
+  }
+  
+  .dashboard .activity .activity-item .activity-badge {
+    margin-top: 3px;
+    z-index: 1;
+    font-size: 11px;
+    line-height: 0;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 3px solid #fff;
+    flex-grow: 0;
+  }
+  
+  .dashboard .activity .activity-item .activity-content {
+    padding-left: 10px;
+    padding-bottom: 20px;
+  }
+  
+  .dashboard .activity .activity-item:first-child .activite-label::before {
+    top: 5px;
+  }
+  
+  .dashboard .activity .activity-item:last-child .activity-content {
+    padding-bottom: 0;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: 76%;
+}
+
+.card-body {
+    flex: 1;
+}
+
+.card-title {
+    margin-bottom: 1rem;
+}
+
+.activity-item {
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+
+.activity-label {
+    min-width: 60px;
+    margin-right: 0.5rem;
+}
+
+.activity-content {
+    flex-grow: 1;
+}
+
+  
+.activity_item {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    margin: 7px 0;
+    min-height: 55px;
+}
+
+.middle_border_div {
+    min-height: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.middle_border {
+    height: 45px;
+    width: 5px;
+    background-color: #dbdbdbde;
+    margin-left: 4px;
+}
+#tracking{
+    background: #fff
+ }
+ .tracking-detail {
+   padding: 3rem 0;
+ }
+ #tracking {
+   margin-bottom: 1rem;
+ } */
+ /* [class*="tracking-status-"] p {
+   margin: 0;
+   font-size: 1.1rem;
+   color: #fff;
+   text-transform: uppercase;
+   text-align: center;
+ } */
+ /* [class*="tracking-status-"] {
+   padding: 1.6rem 0;
+ } */
+ .tracking-list {
+   border: 1px solid #e5e5e5;
+ }
+ .tracking-item {
+   border-left: 4px solid #00ba0d;
+   position: relative;
+   padding: 0px 0px 0px 22px;
+   font-size: 0.9rem;
+   margin-left: 1rem;
+   min-height: 3rem;
+ }
+ .tracking-item:last-child {
+   /* padding-bottom: 4rem; */
+   border-left: 4px solid #fff;
+ }
+ /* .tracking-item .tracking-date {
+   margin-bottom: 0.5rem;
+ } */
+ /* .tracking-item .tracking-date span {
+   color: #888;
+   font-size: 85%;
+   padding-left: 0.4rem;
+ } */
+ /* .tracking-item .tracking-content {
+   padding: 0.5rem 0.8rem;
+   background-color: #f4f4f4;
+   border-radius: 0.5rem;
+ } */
+ .tracking-item .tracking-content span {
+   display: block;
+   color: #767676;
+   /* font-size: 13px; */
+ }
+ .tracking-item .tracking-icon {
+   position: absolute;
+   left: -0.7rem;
+   width: 1.1rem;
+   height: 1.1rem;
+   text-align: center;
+   border-radius: 50%;
+   font-size: 1.1rem;
+   background-color: #fff;
+   color: #fff;
+ }
+ 
+ .tracking-item-pending {
+   border-left: 4px solid #d6d6d6;
+   position: relative;
+   padding: 0px 0px 0px 22px;
+   font-size: 0.9rem;
+   margin-left: 3rem;
+   min-height: 5rem;
+ }
+ .tracking-item-pending:last-child {
+   padding-bottom: 4rem;
+ }
+ .tracking-item-pending .tracking-date {
+   margin-bottom: 0.5rem;
+ }
+ .tracking-item-pending .tracking-date span {
+   color: #888;
+   font-size: 85%;
+   padding-left: 0.4rem;
+ }
+ .tracking-item-pending .tracking-content {
+   padding: 0.5rem 0.8rem;
+   background-color: #f4f4f4;
+   border-radius: 0.5rem;
+ }
+ .tracking-item-pending .tracking-content span {
+   display: block;
+   color: #767676;
+   font-size: 10px;
+ }
+ .tracking-item-pending .tracking-icon {
+   line-height: 2.6rem;
+   position: absolute;
+   left: -0.7rem;
+   width: 1.1rem;
+   height: 1.1rem;
+   text-align: center;
+   border-radius: 50%;
+   font-size: 12px;
+   color: #d6d6d6;
+ }
+ .tracking-item-pending .tracking-content {
+   font-weight: 600;
+   font-size: 17px;
+ }
+ 
+ .tracking-item .tracking-icon.status-current {
+   width: 1.9rem;
+   height: 1.9rem;
+   left: -1.1rem;
+ }
+ .tracking-item .tracking-icon.status-intransit {
+   color: #00ba0d;
+   font-size: 0.6rem;
+ }
+ .tracking-item .tracking-icon.status-current {
+   color: #00ba0d;
+   font-size: 0.6rem;
+ }
+ @media (min-width: 992px) {
+   .tracking-item {
+     margin-left: 1rem;
+   }
+   .tracking-item .tracking-date {
+     position: absolute;
+     left: -10rem;
+     width: 7.5rem;
+     text-align: right;
+   }
+   .tracking-item .tracking-date span {
+     display: block;
+   }
+   .tracking-item .tracking-content {
+     padding: 0;
+     background-color: transparent;
+   }
+ 
+   .tracking-item-pending {
+     margin-left: 10rem;
+   }
+   .tracking-item-pending .tracking-date {
+     position: absolute;
+     left: -10rem;
+     width: 7.5rem;
+     text-align: right;
+   }
+   .tracking-item-pending .tracking-date span {
+     display: block;
+   }
+   .tracking-item-pending .tracking-content {
+     padding: 0;
+     background-color: transparent;
+   }
+ }
+ 
+ .tracking-item .tracking-content {
+   font-weight: 600;
+   font-size: 10px;
+ }
+
+ 
+ .blinker {
+   border: 7px solid #e9f8ea;
+   animation: blink 1s;
+   animation-iteration-count: infinite;
+ }
+ @keyframes blink { 50% { border-color:#fff ; }  }
+
+
+ .align-items-center {
+  align-items: center !important;
+}
+.justify-content-between {
+  justify-content: space-between !important;
+}
+.d-flex {
+  display: flex !important;
+}

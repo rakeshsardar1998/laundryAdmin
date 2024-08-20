@@ -1,0 +1,74 @@
+<!-- <div class="container-fluid">
+    <div class="row justify-content-center align-items-center full-height">
+        <div class="col-md-6">
+            <form [formGroup]="USRFR" class="card">
+                <div class="card-header bg-primary text-white">
+                    <div class="card-title">New User</div>
+                    <div class="card-subtitle">Create User</div>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name" formControlName="name" placeholder="Enter name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" formControlName="email" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" formControlName="password" placeholder="Enter password">
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select class="form-control2" name="role" formControlName="role">
+                            <option value="admin">Admin</option>
+                            <option value="user">User</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-footer bg-light">
+                    <button type="button" class="btn btn-secondary" (click)="SY.BACK()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="!USRFR.valid" (click)="SAVE()">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="card mx-3 my-3">
+      <div class="card-header">
+          <div class="fs-5 fw-normal">Profile</div>
+      </div>
+      <div class="card-body">
+          <div class="card-input-div">
+              <div>
+                  <label for="Name">Name</label>
+                  <input type="text" class="card-input" id="Email" formControlName="Name" placeholder="Enter Name">
+              </div>
+              <div>
+                  <label for="Email">Email</label>
+                  <input type="text" class="card-input" id="Email" formControlName="email" placeholder="Enter Email">
+              </div>
+          </div>
+          <div class="card-input-div">
+              <div>
+                  <label for="Name">Password</label>
+                  <input type="text" class="card-input" id="Password" formControlName="password" placeholder="Enter Password">
+              </div>
+              <div>
+                  <label for="role">Role</label>
+                  <!-- <select class="card-input" id="role" formControlName="role" placeholder="Enter name" > -->
+                      <select class="card-input" id="role" formControlName="role">
+                          <option value="admin" class="card-option">Admin</option>
+                          <option value="user" class="card-option">User</option>
+                      </select>
+              </div>
+          </div>
+      </div>
+      <div class="card-footer bg-light">
+          <button type="button" class="btn btn-secondary float-start" (click)="SY.BACK()">Cancel</button>
+          <button type="submit" class="btn btn-primary float-end" [disabled]="!USRFR.valid" (click)="SAVE()">Save</button>
+      </div>
+  </div>

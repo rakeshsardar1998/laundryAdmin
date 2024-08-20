@@ -1,0 +1,50 @@
+<div class="FX-VIEW">
+      <div class="card mx-3 my-3">
+          <!-- Loader -->
+          <div *ngIf="loading" class="loader-overlay">
+              <mat-spinner diameter="50" color="primary"></mat-spinner>
+          </div>
+          <div class="card-header">
+              <div class="fs-5 p-1">Order Status Details</div>
+              <!-- <mat-card-subtitle>Department {{LH.DEPID}}</mat-card-subtitle> -->
+          </div>
+          <div class="card-body card-grid">
+              <div class="ATTR">
+                  <label>Order Status ID</label>
+                  <span>{{LH.orderStatusId ? LH.orderStatusId : 'N/A'}}</span>
+              </div>
+              <div class="ATTR">
+                  <label>Status Name</label>
+                  <span>{{LH.statusName ? LH.statusName : 'N/A'}}</span>
+              </div>
+              <div class="ATTR">
+                  <label>Short Form</label>
+                  <span>{{LH.shortForm ? LH.shortForm : 'N/A'}}</span>
+              </div>
+              <div class="ATTR">
+                  <label>Serial</label>
+                  <span>{{LH.serial ? LH.serial : 'N/A'}}</span>
+              </div>
+              <div class="ATTR">
+                  <label>IsActive</label>
+                  <span>{{LH.isActive ? 'Yes' : 'No'}}</span>
+              </div>
+              <div class="ATTR">
+                  <label>IsDelete</label>
+                  <span>{{LH.isDeleted ? 'Yes' : 'No'}}</span>
+              </div>
+  
+          </div>
+          <div class="card-footer BTN d-flex justify-content-between">
+              <button class="text-primary" mat-icon-button matTooltip="Go back" (click)="SY.BACK()">
+                  <mat-icon>arrow_back</mat-icon>
+              </button>
+              <button class="text-center text-danger" mat-icon-button matTooltip="Delete record" (click)="REMOVE(LH)">
+                  <mat-icon>delete</mat-icon>
+              </button>
+              <button class="text-end text-success" mat-icon-button matTooltip="Modify record" (click)="EDIT(LH)">
+                  <mat-icon>edit</mat-icon>
+              </button>
+          </div>
+      </div>
+  </div>

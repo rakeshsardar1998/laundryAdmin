@@ -1,0 +1,38 @@
+
+<div class="card mx-3 my-3" *ngIf="SLOTFR" [formGroup]="SLOTFR">
+    <div class="card-header">
+        <div class="fs-5 fw-normal">{{ isEdit ? 'Edit Slot' : 'Add New Slot' }}</div>
+        <div class="text-secondary mt-1"><small>{{ isEdit ? 'Edit Slot By SlotId' : 'Create A Slot' }}</small></div>
+    </div>
+    <div class="card-body">
+        <div class="card-input-div">
+            <div>
+                <label for="day">Day<span>*</span></label>
+                <input type="text" class="card-input" id="day" formControlName="day" placeholder="Enter Day">
+                <div *ngIf="SLOTFR.get('day')?.invalid && SLOTFR.get('day')?.touched" class="text-danger">Day is required</div>
+            </div>
+            <div>
+                <label for="time">Time<span>*</span></label>
+                <input type="text" class="card-input" id="time" formControlName="time" placeholder="Enter Time">
+                <div *ngIf="SLOTFR.get('time')?.invalid && SLOTFR.get('time')?.touched" class="text-danger">Time is required</div>
+            </div>
+            <div>
+                <label for="slotLimit">SlotLimit<span>*</span></label>
+                <input type="number" class="card-input" id="slotLimit" formControlName="slotLimit" placeholder="Enter SlotLimit">
+                <div *ngIf="SLOTFR.get('slotLimit')?.invalid && SLOTFR.get('slotLimit')?.touched" class="text-danger">SlotLimit is required</div>
+            </div>
+            <div class="custom-dropdown" *ngIf="isEdit">
+                <label for="isActive">Active Status</label>
+                <select class="card-input" id="isActive" formControlName="isActive">
+                    <option [value]="true" class="card-option">ACTIVE</option>
+                    <option [value]="false" class="card-option">INACTIVE</option>
+                </select>
+                <span class="custom-dropdown-arrow"></span>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer bg-light">
+        <button type="button" class="btn btn-secondary float-start" (click)="SY.BACK()">Cancel</button>
+        <button type="submit" class="btn btn-primary float-end" [disabled]="!SLOTFR.valid" (click)="SAVE()">Save</button>
+    </div>
+</div>

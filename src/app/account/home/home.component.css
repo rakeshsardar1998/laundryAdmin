@@ -1,0 +1,236 @@
+.main-content .container-fluid {
+      padding-right: 39px !important;
+      padding-left: 39px !important;
+}
+
+.container-fluid {
+      width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: 15px;
+      padding-left: 15px;
+}
+
+.h2 {
+      font-size: 1.25rem;
+}
+
+.breadcrumb {
+      display: flex;
+      margin-bottom: 1rem;
+      padding: .75rem 1rem;
+      list-style: none;
+      border-radius: .375rem;
+      flex-wrap: wrap;
+}
+
+.card-stats .card-body {
+      padding: 1rem 1.5rem;
+}
+
+.card-body {
+      padding: 1.5rem;
+      flex: 1 1 auto;
+}
+
+img {
+      vertical-align: middle;
+      border-style: none;
+}
+
+.text-right {
+      text-align: right !important;
+}
+
+.mt-3,
+.my-3 {
+      margin-top: 1rem !important;
+}
+
+.col {
+      max-width: 100%;
+      flex-basis: 0;
+      flex-grow: 1;
+}
+
+.text-muted {
+      color: #8898aa !important;
+}
+
+.text-uppercase {
+      text-transform: uppercase !important;
+}
+
+.mb-0,
+.my-0 {
+      margin-bottom: 0 !important;
+}
+
+.text-dark {
+      color: #212529 !important;
+}
+
+.font-weight-bold {
+      font-weight: 600 !important;
+}
+
+.mb-0,
+.my-0 {
+      margin-bottom: 0 !important;
+}
+
+.display-3 {
+      font-size: 2.1875rem;
+      font-weight: 600;
+      line-height: 1.5;
+}
+
+.card-icon .icon {
+      border-radius: 10px;
+}
+
+.shadow {
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06) !important;
+}
+
+.icon-shape {
+      display: inline-flex;
+      padding: 12px;
+      text-align: center;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+}
+
+.icon {
+      width: 3rem;
+      height: 3rem;
+}
+
+.text-white {
+      color: #fff !important;
+}
+
+.text-right {
+      text-align: right !important;
+      cursor: pointer;
+}
+
+.mt-3,
+.my-3 {
+      margin-top: 1rem !important;
+}
+
+.card-icon {
+      position: absolute;
+      top: -14%;
+      left: 10%;
+}
+
+.card-stats .card-body {
+      padding: 1rem 1.5rem;
+}
+
+.card-body {
+      padding: 1.5rem;
+      flex: 1 1 auto;
+}
+
+.mb-xl-0,
+.my-xl-0 {
+      margin-bottom: 0 !important;
+}
+
+.mb-4,
+.my-4 {
+      margin-bottom: 1.5rem !important;
+}
+
+.card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      border: 1px solid rgba(0, 0, 0, .05);
+      border-radius: .375rem;
+      background-color: #fff;
+      background-clip: border-box;
+}
+
+.p-3 {
+      padding: 1rem !important;
+}
+
+.m-0 {
+      margin: 0 !important;
+}
+
+.float-left {
+      float: left !important;
+}
+
+h3,
+.h3 {
+      font-size: 1.0625rem;
+}
+
+.p-3 {
+      padding: 1rem !important;
+}
+
+
+.m-0 {
+      margin: 0 !important;
+}
+
+.float-left {
+      float: left !important;
+}
+
+
+.text-right {
+      text-align: right !important;
+}
+
+.pb-1,
+.py-1 {
+      padding-bottom: .25rem !important;
+}
+
+.pt-1,
+.py-1 {
+      padding-top: .25rem !important;
+}
+
+.overview {
+      position: relative;
+}
+
+.text-white {
+      color: #fff !important;
+      /* margin-top: -55px; */
+      margin-left: 0px;
+      font-size: 31px;
+
+}
+
+h2,
+.h2 {
+      font-size: 1.25rem;
+}
+
+.overview div {
+      position: absolute;
+      bottom: 20%;
+      left: 8%;
+}
+
+.p-3 {
+      padding: 1rem !important;
+}
+
+.main-content .container-fluid {
+      padding-right: 39px !important;
+      padding-left: 39px !important;
+}

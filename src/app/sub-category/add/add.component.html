@@ -1,0 +1,63 @@
+<div class="card mx-3 my-3" *ngIf="SCATFR" [formGroup]="SCATFR">
+    <div class="card-header">
+        <div class="fs-5 fw-normal">{{ isEdit ? 'Edit Subcategory' : 'Add New Subcategory' }}</div>
+        <div class="text-secondary mt-1"><small>{{ isEdit ? 'Edit Subcategory By SubcategoryId' : 'Create A Subcategory'
+                }}</small></div>
+    </div>
+    <div class="card-body">
+        <!-- Loader -->
+        <div *ngIf="loading" class="loader-overlay">
+            <mat-spinner diameter="50" color="primary"></mat-spinner>
+        </div>
+        <div class="card-input-div">
+            <div>
+                <label for="subCategoryName">SubCategory Name<span>*</span></label>
+                <input type="text" class="card-input" id="subCategoryName" formControlName="subCategoryName"
+                    placeholder="Enter SubCategory Name">
+                <div *ngIf="SCATFR.get('subCategoryName')?.invalid && SCATFR.get('subCategoryName')?.touched"
+                    class="text-danger">SubCategory Name is required</div>
+            </div>
+            <div>
+                <label for="subCategoryImage">Image</label>
+                <input type="text" class="card-input" id="subCategoryImage" formControlName="subCategoryImage"
+                    placeholder="Enter Image URL">
+            </div>
+        </div>
+        <div class="card-input-div">
+            <div>
+                <label for="thumbnailImage">Thumbnail Image<span>*</span></label>
+                <input type="text" class="card-input" id="thumbnailImage" formControlName="thumbnailImage"
+                    placeholder="Enter Thumbnail Image URL">
+                <div *ngIf="SCATFR.get('thumbnailImage')?.invalid && SCATFR.get('thumbnailImage')?.touched"
+                    class="text-danger">Image URL is required</div>
+            </div>
+            <div class="custom-dropdown">
+                <label for="categoryId">Category<span>*</span></label>
+                <select class="card-input" id="categoryId" formControlName="categoryId">
+                    <option value="" disabled selected>Select Category</option>
+                    <option *ngFor="let item of roles" [value]="item.categoryId" class="card-option">
+                        {{ item.categoryName }}</option>
+                </select>
+                <div *ngIf="SCATFR.get('categoryId')?.invalid && SCATFR.get('categoryId')?.touched" class="text-danger">
+                    Category is required</div>
+            </div>
+            <div class="custom-dropdown" *ngIf="isEdit">
+                <label for="isActive">Active Status</label>
+                <select class="card-input" id="isActive" formControlName="isActive">
+                    <option [value]="true" class="card-option">ACTIVE</option>
+                    <option [value]="false" class="card-option">INACTIVE</option>
+                </select>
+                <span class="custom-dropdown-arrow"></span>
+            </div>
+            <div>
+                <label for="serial">Serial</label>
+                <input type="number" class="card-input" id="serial" formControlName="serial" placeholder="Enter Serial">
+            </div>
+        </div>
+    </div>
+    <div class="card-footer bg-light">
+        <button type="button" class="btn btn-secondary float-start" (click)="SY.BACK()">Cancel</button>
+        <button type="submit" class="btn btn-primary float-end" [disabled]="!SCATFR.valid"
+            (click)="SAVE()">Save</button>
+    </div>
+</div>

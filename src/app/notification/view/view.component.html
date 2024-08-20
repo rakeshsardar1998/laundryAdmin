@@ -1,0 +1,69 @@
+<div class="FX-VIEW">
+    <div class="card mx-3 my-3">
+        <!-- Loader -->
+        <div *ngIf="loading" class="loader-overlay">
+            <mat-spinner diameter="50" color="primary"></mat-spinner>
+        </div>
+        <div class="card-header">
+            <div class="fs-5 p-1">Notification Details</div>
+            <!-- <mat-card-subtitle>Department {{LH.DEPID}}</mat-card-subtitle> -->
+        </div>
+        <div class="card-body card-grid">
+            <div class="ATTR">
+                <label>Notification ID</label>
+                <span>{{LH.notificationId ? LH.notificationId : 'N/A'}}</span>
+            </div>
+            <div class="ATTR">
+                <label>Notification Title</label>
+                <span>{{LH.notificationTitle? LH.notificationTitle : 'N/A'}}</span>
+            </div>
+            <div class="ATTR">
+                <label>Notification Message</label>
+                <span>{{LH.notificationMessage? LH.notificationMessage : 'N/A'}}</span>
+            </div>
+            <div class="ATTR">
+                <label>Notification Type</label>
+                <span>{{LH.approvalStatus ? 'LH.approvalStatus': 'N/A'}}</span>
+            </div>
+            <div class="ATTR">
+                <label>Notification For</label>
+                <span>{{LH.notificationFor ? LH.notificationFor: 'N/A'}}</span>
+            </div>
+            <div class="ATTR">
+                <label>Is Read</label>
+                <span>{{LH.isRead ? LH.isRead: 'N/A'}}</span>
+            </div>
+            <div class="ATTR">
+                <label>Expiry Date</label>
+                <span>{{LH.expiryDate ? (LH.expiryDate | date: 'mediumDate'): 'N/A'}}</span>
+            </div>
+            <div class="ATTR">
+                <label>Priority</label>
+                <span>{{LH.priority ? LH.priority: 'N/A'}}</span>
+            </div>
+            <div class="ATTR">
+                <label>IsActive</label>
+                <span>{{LH.isActive ? 'Yes': 'No'}}</span>
+            </div>
+            <div class="ATTR">
+                <label>IsDeleted</label>
+                <span>{{LH.isDeleted ? 'Yes': 'No'}}</span>
+            </div>
+            <div class="ATTR">
+                <label>Feedback</label>
+                <span>{{LH.feedbackNotes ? LH.feedbackNotes : 'N/A'}}</span>
+            </div>
+        </div>
+        <div class="card-footer BTN d-flex justify-content-between">
+            <button class="text-primary" mat-icon-button matTooltip="Go back" (click)="SY.BACK()">
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+            <button class="text-center text-danger" mat-icon-button matTooltip="Delete record" (click)="REMOVE(LH)">
+                <mat-icon>delete</mat-icon>
+            </button>
+            <button class="text-end text-success" mat-icon-button matTooltip="Modify record" (click)="EDIT(LH)">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

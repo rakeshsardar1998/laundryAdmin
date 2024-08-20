@@ -1,0 +1,49 @@
+<div class="card mx-3 my-3" *ngIf="FR" [formGroup]="FR">
+      <div class="card-header">
+            <div class="fs-5 fw-normal">{{ isEdit ? 'Edit Reviews&Ratings' : 'Add New Reviews&Ratings' }}</div>
+            <div class="text-secondary mt-1"><small>{{ isEdit ? 'Edit Reviews&Ratings By ReviewId' : 'Create A Reviews&Ratings'
+                        }}</small></div>
+      </div>
+      <div class="card-body">
+            <!-- Loader -->
+            <div *ngIf="loading" class="loader-overlay">
+                  <mat-spinner diameter="50" color="primary"></mat-spinner>
+            </div>
+            <div class="card-input-div">
+                  <!-- <div>
+                        <label for="pincode">Reviews<span>*</span></label>
+                        <input type="text" class="card-input" id="reviews" formControlName="reviews"
+                              placeholder="Enter Reviews">
+                        <div *ngIf="FR.get('reviews')?.invalid && FR.get('reviews')?.touched" class="text-danger">
+                              Reviews is required</div>
+                  </div> -->
+                  <div>
+                        <label for="pincode">Ratings<span>*</span></label>
+                        <input type="number" class="card-input" id="ratings" formControlName="ratings"
+                              placeholder="Enter Ratings">
+                        <div *ngIf="FR.get('ratings')?.invalid && FR.get('ratings')?.touched" class="text-danger">
+                              Ratings is required</div>
+                  </div>
+                  <div class="custom-dropdown" *ngIf="isEdit">
+                        <label for="isActive">Active Status</label>
+                        <select class="card-input" id="isActive" formControlName="isActive">
+                              <option [value]="true" class="card-option">ACTIVE</option>
+                              <option [value]="false" class="card-option">INACTIVE</option>
+                        </select>
+                        <span class="custom-dropdown-arrow"></span>
+                  </div>
+                  <div>
+                        <label for="reviews">Reviews<span>*</span></label>
+                        <textarea cols="20" rows="2" class="form-control mt-1 text-secondary" id="reviews" formControlName="reviews"
+                              placeholder="Enter Reviews"></textarea>
+                        <div *ngIf="FR.get('reviews')?.invalid && FR.get('reviews')?.touched" class="text-danger">
+                              Reviews is required</div>
+                  </div>
+            </div>
+      </div>
+      <div class="card-footer">
+            <button type="button" class="btn btn-secondary float-start" (click)="SY.BACK()">Cancel</button>
+            <button type="submit" class="btn btn-primary float-end" [disabled]="!FR.valid"
+                  (click)="SAVE()">Save</button>
+      </div>
+</div>

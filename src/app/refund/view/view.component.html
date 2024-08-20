@@ -1,0 +1,96 @@
+<div class="container-fluid mt-4">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card-header py-2 d-flex justify-content-between align-items-center">
+                <div class="">
+                    <a class="btn btn-light button" (click)="SY.BACK()"> Back </a>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#staticBackdrop"
+                    (click)="openChangeRefundStatusModal(LH)">
+                    Change Refund Status
+                </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mt-2">
+            <div class="card d-flex flex-column h-100">
+                <div class="card-header py-2">
+                    <h2 class="m-0">Refund Details</h2>
+                </div>
+                <div class="card-body pt-2">
+                    <div class="table-responsive-md">
+                        <table class="table table-bordered table-striped ">
+                            <tbody>
+                                <tr>
+                                    <th class="py-2">Refund Id</th>
+                                    <td class="py-2">{{LH.refundId ? LH.refundId : 'N/A'}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="py-2">Refund Status</th>
+                                    <td class="py-2">{{LH.refundStatus?.refundStatusName ? LH.refundStatus?.refundStatusName: 'N/A'}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="py-2">Order Id</th>
+                                    <td class="py-2">
+                                        {{LH.order?.orderId ? LH.order?.orderId :
+                                        'N/A'}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="py-2">Phone</th>
+                                    <td class="py-2">{{LH.owner?.phone ? LH.owner?.phone : 'N/A'}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="py-2">Order Date</th>
+                                    <td class="py-2">{{LH.order?.createdAt ? LH.order?.createdAt : 'N/A'}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="py-2">Refund Reason</th>
+                                    <td class="py-2">{{LH.refundReason}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="py-2">Refund Requested Date</th>
+                                    <td class="py-2">{{LH.createdAt}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="py-2">Admin Notes</th>
+                                    <td class="py-2">{{LH.adminNotes}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mt-2">
+            <div class="card d-flex flex-column h-100">
+                <div class="card-header py-2">
+                    <h2 class="m-0">Order Details</h2>
+                </div>
+                <div class="card-body pt-2">
+                    <div class="table-responsive-md">
+                        <table class="table table-bordered table-striped ">
+                            <tbody>
+                                <tr>
+                                    <th class="py-2">Picked Up</th>
+                                    <td class="py-2">{{LH.order?.pickUpSlot ? LH.order?.pickUpSlot : 'N/A'}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="py-2">Delivery Date</th>
+                                    <td class="py-2">{{LH.order?.deliverySlot ? LH.order?.deliverySlot : 'N/A'}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="py-2">Total Payable Amount</th>
+                                    <td class="py-2">{{LH.order?.totalPayableAmount ? LH.order?.totalPayableAmount : 'N/A'}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>

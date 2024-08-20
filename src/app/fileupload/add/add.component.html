@@ -1,0 +1,26 @@
+<div class="card mx-3 my-3">
+    <div class="card-header">
+        <div class="fs-5 fw-normal">{{ isEdit ? 'EDIT FILE' : 'ADD FILE' }}</div>
+        <div class="text-secondary mt-1"><small>{{ isEdit ? 'Edit File Data ' : 'Create A File' }}</small></div>
+    </div>
+    <div class="card-body">
+        <div class="card-input-div">
+            <div>
+                <label for="inputNumber" class="col-form-label">File Upload</label>
+                <input class="form-control border" type="file" id="formData" (change)="onFileSelected($event)"/>
+            </div>
+            <div class="custom-dropdown" *ngIf="isEdit">
+                <label for="file">Active Status</label>
+                <select class="card-input" id="file" [(ngModel)]="isActive">
+                    <option [value]="true" class="card-option">ACTIVE</option>
+                    <option [value]="false" class="card-option">INACTIVE</option>
+                </select>
+                <span class="custom-dropdown-arrow"></span>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer bg-light">
+        <button type="button" class="btn btn-secondary float-start" (click)="SY.BACK()">Cancel</button>
+        <button type="submit" class="btn btn-primary float-end" [disabled]="!selectedFile" (click)="SAVE()">Save</button>
+    </div>
+</div>

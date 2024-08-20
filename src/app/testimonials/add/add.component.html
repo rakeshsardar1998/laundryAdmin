@@ -1,0 +1,41 @@
+<div class="card mx-3 my-3" *ngIf="TESTIMONIALFR" [formGroup]="TESTIMONIALFR">
+    <div class="card-header">
+        <div class="fs-5 fw-normal">{{ isEdit ? 'Edit Testimonial' : 'Add New Testimonial' }}</div>
+        <div class="text-secondary mt-1"><small>{{ isEdit ? 'Edit Testimonial Data' : 'Create A Testimonial' }}</small></div>
+    </div>
+    <div class="card-body">
+        <div class="card-input-div">
+            <div>
+                <label for="authorName">Author Name<span>*</span></label>
+                <input type="text" class="card-input" id="authorName" formControlName="authorName" placeholder="Enter Author Name">
+                <div *ngIf="TESTIMONIALFR.get('authorName')?.invalid && TESTIMONIALFR.get('authorName')?.touched" class="text-danger">Author Name is required</div>
+            </div>
+            <div>
+                <label for="notes"> Notes<span>*</span></label>
+                <textarea class="card-textarea" id="notes" formControlName="notes"
+                    placeholder="Enter Notes"></textarea>
+                    <div *ngIf="TESTIMONIALFR.get('notes')?.invalid && TESTIMONIALFR.get('notes')?.touched" class="text-danger">Notes is required</div>
+            </div>
+            <div class="custom-dropdown">
+                <label for="showInUI">Show In UI</label>
+                <select class="card-input" id="showInUI" formControlName="showInUI">
+                    <option [value]="true" class="card-option">ACTIVE</option>
+                    <option [value]="false" class="card-option">INACTIVE</option>
+                </select>
+                <span class="custom-dropdown-arrow"></span>
+            </div>
+            <div class="custom-dropdown" *ngIf="isEdit">
+                <label for="isActive">Active Status</label>
+                <select class="card-input" id="isActive" formControlName="isActive">
+                    <option [value]="true" class="card-option">ACTIVE</option>
+                    <option [value]="false" class="card-option">INACTIVE</option>
+                </select>
+                <span class="custom-dropdown-arrow"></span>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer bg-light">
+        <button type="button" class="btn btn-secondary float-start" (click)="SY.BACK()">Cancel</button>
+        <button type="submit" class="btn btn-primary float-end" [disabled]="!TESTIMONIALFR.valid" (click)="SAVE()">Save</button>
+    </div>
+</div>

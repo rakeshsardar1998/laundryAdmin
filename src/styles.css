@@ -1,0 +1,92 @@
+html,
+body {
+      height: 100%;
+}
+
+body {
+      margin: 0;
+      font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+* {
+      margin: 0px;
+      padding: 0px;
+}
+
+.card-header {
+      background-color: rgba(0, 0, 255, 0.070) !important;
+}
+
+.card-footer {
+      background-color: rgba(0, 0, 255, 0.070) !important;
+}
+
+.BTN {
+      background-color: rgba(0, 0, 255, 0.070) !important;
+      padding: 0 !important;
+}
+
+.card-footer button span {
+      padding: 0px !important;
+}
+
+.card-grid {
+      display: grid;
+      grid-template-columns: 31% 31% 31%;
+      justify-content: space-between;
+      transition: all 0.3s;
+}
+
+@media screen and (max-width: 770px) {
+      .card-grid {
+            grid-template-columns: 48% 48%;
+      }
+}
+
+@media screen and (max-width: 550px) {
+      .card-grid {
+            grid-template-columns: 95%;
+            justify-content: center;
+      }
+}
+
+
+.loader-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.7);
+      /* Semi-transparent overlay */
+}
+
+.mat-spinner {
+      width: 50px;
+      height: 50px;
+}
+
+@media (max-width: 768px) {
+
+      /* Adjust loader size for smaller screens */
+      .mat-spinner {
+            width: 30px;
+            height: 30px;
+      }
+}
+
+.imageCell {
+      width: 100px;
+      /* Set a fixed width for image cells */
+}
+
+.thumbnail {
+      width: 70px;
+      height: 70px;
+      aspect-ratio: 1/1;
+      margin-top: 5px;
+}
+

@@ -1,0 +1,50 @@
+<div class="modal fade show" id="staticBackdrop" aria-modal="true" role="dialog"
+      style="padding-right: 17px; display: block;">
+      <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                  <div class="modal-header d-flex justify-content-between">
+                        <h5 class="modal-title" id="staticBackdropLabel">
+                              All Order Products
+                        </h5>
+                        <div>
+                              <button type="button" class="btn btn-close modal_close" (click)="closeModal()"></button>
+                        </div>
+                  </div>
+                  <div class="modal-body">
+                        <table class="table table-bordered table-striped">
+                              <tbody>
+                                  <tr>
+                                      <td class="">
+                                          <table class="table table-bordered ">
+                                              <tbody>
+                                                  <tr>
+                                                      <th>Product Name</th>
+                                                      <th>Category Name</th>
+                                                      <th>SubCategoy Name</th>
+                                                      <th>Quantity</th>
+                                                      <th>Per Price Quantity</th>
+                                                      <th>Total Price</th>
+                                                  </tr>
+                                                  <tr *ngFor="let item of data">
+                                                      <td>{{item.product.productName}}</td>
+                                                      <td>{{item.product.category.categoryName}}</td>
+                                                      <td>{{item.product.subCategory.subCategoryName}}</td>
+                                                      <td>{{item.quantity}}</td>
+                                                      <td>{{item.pricePerQantity}}</td>
+                                                      <td>{{item.totalPrice}}</td>
+                                                  </tr>
+  
+                                              </tbody>
+                                          </table>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                  </div>
+
+                  <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" (click)="closeModal()">Close</button>
+                  </div>
+            </div>
+      </div>
+</div>

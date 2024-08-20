@@ -1,0 +1,71 @@
+<div class="card_main mx-3 my-3">
+      <div class="card">
+            <!-- Loader -->
+            <div *ngIf="loading" class="card-loader-overlay">
+                  <mat-spinner diameter="50" color="primary"></mat-spinner>
+            </div>
+            <div class="card-header bg-light">
+                  <div class="fs-5 py-1">Product Details</div>
+            </div>
+            <div class="card-body">
+                  <div class="card_bgImg">
+                        <div class="details_img">
+                              <img class=""
+                                    src="{{ LH.thumbnailImage ? LH.thumbnailImage : 'https://t4.ftcdn.net/jpg/00/89/55/15/240_F_89551596_LdHAZRwz3i4EM4J0NHNHy2hEUYDfXc0j.jpg' }}"
+                                    alt="Thumbnail Image">
+                        </div>
+                        <div class="details_img2">
+                              <div class="attribute">
+                                    <label class="fw-bold">Product Name:</label>
+                                    <span>{{ LH.productName ? LH.productName : 'N/A' }}</span>
+                              </div>
+                              <div class="attribute">
+                                    <label class="fw-bold">Price:</label>
+                                    <span>{{ LH.price ? LH.price: 'N/A' }}</span>
+                              </div>
+                              <div class="attribute">
+                                    <label class="fw-bold">Subcategory:</label>
+                                    <span>{{ LH.subCategory?.subCategoryName ? LH.subCategory.subCategoryName : 'N/A' }}</span>
+                              </div>
+                              <div class="attribute">
+                                    <label class="fw-bold">Category:</label>
+                                    <span>{{ LH.category?.categoryName ? LH.category?.categoryName : 'N/A' }}</span>
+                              </div>
+                              <div class="attribute">
+                                    <label class="fw-bold">Serial:</label>
+                                    <span>{{ LH.serial ? LH.serial : 'N/A' }}</span>
+                              </div>
+                              <div class="attribute">
+                                    <label class="fw-bold">Active Status:</label>
+                                    <span>{{ LH.isActive ? 'Yes' : 'No' }}</span>
+                              </div>
+                              <div class="attribute">
+                                    <label class="fw-bold">Delete Status:</label>
+                                    <span>{{ LH.isDeleted ? 'Yes' : 'No' }}</span>
+                              </div>
+                              <div class="attribute">
+                                    <label class="fw-bold">Long Description:</label>
+                                    <span>{{ LH.longDescription ? LH.longDescription : 'N/A' }}</span>
+                              </div>
+                              <div class="attribute">
+                                    <label class="fw-bold">Short Description:</label>
+                                    <span>{{ LH.shortDescription ? LH.shortDescription : 'N/A' }}</span>
+                              </div>
+                        </div>
+
+                  </div>
+            </div>
+            <div class="card-footer BTN d-flex justify-content-between">
+                  <button class="text-primary" mat-icon-button matTooltip="Go back" (click)="SY.BACK()">
+                      <mat-icon>arrow_back</mat-icon>
+                  </button>
+                  <button class="text-center text-danger" mat-icon-button matTooltip="Delete record" (click)="REMOVE(LH)">
+                      <mat-icon>delete</mat-icon>
+                  </button>
+                  <button class="text-end text-success" mat-icon-button matTooltip="Modify record" (click)="EDIT(LH)">
+                      <mat-icon>edit</mat-icon>
+                  </button>
+              </div>
+      </div>
+
+</div>

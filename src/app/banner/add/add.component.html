@@ -1,0 +1,40 @@
+<div class="card mx-3 my-3" *ngIf="CATFR" [formGroup]="CATFR">
+    <div class="card-header">
+        <div class="fs-5 fw-normal">{{ isEdit ? 'Edit Banner' : 'Add New Banner' }}</div>
+        <div class="text-secondary mt-1"><small>{{ isEdit ? 'Edit Banner By BannerId' : 'Create A Banner' }}</small></div>
+    </div>
+    <div class="card-body">
+        <!-- Loader -->
+        <div *ngIf="loading" class="loader-overlay">
+            <mat-spinner diameter="50" color="primary"></mat-spinner>
+        </div>
+        <div class="card-input-div">
+            <div>
+                <label for="bannerName">Banner Name<span>*</span></label>
+                <input type="text" class="card-input" id="bannerName" formControlName="bannerName" placeholder="Enter Banner Name">
+                <div *ngIf="CATFR.get('bannerName')?.invalid && CATFR.get('bannerName')?.touched" class="text-danger">Banner Name is required</div>
+            </div>
+            <div>
+                <label for="image">Image<span>*</span></label>
+                <input type="text" class="card-input" id="image" formControlName="image" placeholder="Enter Image URL">
+                <div *ngIf="CATFR.get('image')?.invalid && CATFR.get('image')?.touched" class="text-danger">Image URL is required</div>
+            </div>
+            <div>
+                <label for="serial">Serial</label>
+                <input type="number" class="card-input" id="serial" formControlName="serial" placeholder="Enter Serial">
+            </div>
+            <div class="custom-dropdown" *ngIf="isEdit">
+                <label for="isActive">Active Status</label>
+                <select class="card-input" id="isActive" formControlName="isActive">
+                    <option [value]="true" class="card-option">ACTIVE</option>
+                    <option [value]="false" class="card-option">INACTIVE</option>
+                </select>
+                <span class="custom-dropdown-arrow"></span>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer bg-light">
+        <button type="button" class="btn btn-secondary float-start" (click)="SY.BACK()">Cancel</button>
+        <button type="submit" class="btn btn-primary float-end" [disabled]="!CATFR.valid" (click)="SAVE()">Save</button>
+    </div>
+</div>

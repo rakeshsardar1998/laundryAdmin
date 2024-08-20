@@ -1,0 +1,149 @@
+<div class="H100 FXCC bgHome">
+    <div class="container-fluid">
+        <div class="header pt-5">
+
+            <div class="header-body mt--4">
+                <div class="row align-items-center pb-4">
+                    <div class="col-lg-6 col-7">
+                        <h6 class="h2 d-inline-block">Dashboard</h6>
+                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
+                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                                <li class="breadcrumb-item "><a href="https://adminlaundry.razinsoft.com"><i
+                                            class="fa fa-home text-primary"></i></a></li>
+                                <li class="breadcrumb-item active" aria-current="page"> Dashboard </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <!-- Card stats -->
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body" (click)="navigetToCustomerList()">
+                                <div class="row">
+                                    <div class="col mt-3 text-right">
+                                        <h4 class="card-title text-uppercase text-muted mb-0">All Customers </h4>
+                                        <span class="display-3 text-dark font-weight-bold mb-0">
+                                           {{ dashboardData.userCount }}
+                                        </span>
+                                    </div>
+                                    <div class="card-icon">
+                                        <div class="icon icon-shape text-white shadow">
+                                            <img width="80"
+                                                src="https://adminlaundry.razinsoft.com/images/icons/user.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-6">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body" (click)="navigetToProductList()">
+                                <div class="row">
+                                    <div class="col mt-3 text-right">
+                                        <h4 class="card-title text-uppercase text-muted mb-0">All Products</h4>
+                                        <span class="display-3 text-dark font-weight-bold mb-0">
+                                            {{ dashboardData.ProductCount }}
+                                        </span>
+                                    </div>
+                                    <div class="card-icon">
+                                        <div class="icon icon-shape text-white shadow">
+                                            <img width="80"
+                                                src="https://adminlaundry.razinsoft.com/images/icons/items.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body" (click)="navigetToCategoryList()">
+                                <div class="row">
+                                    <div class="col mt-3 text-right">
+                                        <h4 class="card-title text-uppercase text-muted mb-0">All Category</h4>
+                                        <span class="display-3 text-dark font-weight-bold mb-0">
+                                            {{ dashboardData.catagoryCount }}
+                                        </span>
+                                    </div>
+                                    <div class="card-icon">
+                                        <div class="icon icon-shape text-white shadow">
+                                            <img width="80"
+                                                src="../../../assets/img/category.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body" (click)="navigetToSubCategoryList()">
+                                <div class="row">
+                                    <div class="col mt-3 text-right">
+                                        <h4 class="card-title text-uppercase text-muted mb-0">All Sub Category</h4>
+                                        <span class="display-3 text-dark font-weight-bold mb-0">
+                                            {{ dashboardData.subCatagoryCount }}
+                                        </span>
+                                    </div>
+                                    <div class="card-icon">
+                                        <div class="icon icon-shape text-white shadow">
+                                            <img width="80"
+                                                src="../../../assets/img/sub-category.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6" style="margin-top: 9px;">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body" (click)="navigateToOrdersList()">
+                                <div class="row">
+                                    <div class="col mt-3 text-right">
+                                        <h4 class="card-title text-uppercase text-muted mb-0">All Orders</h4>
+                                        <span class="display-3 text-dark font-weight-bold mb-0">
+                                            {{ dashboardData.allOrderCount }}
+                                        </span>
+                                    </div>
+                                    <div class="card-icon">
+                                        <div class="icon icon-shape text-white shadow">
+                                            <img width="80"
+                                                src="../../../assets/img/order.png" alt="" style="height: 58px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6" style="margin-top: 9px;">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body" (click)="navigateToOrdersList()">
+                                <div class="row">
+                                    <div class="col mt-3 text-right">
+                                        <h4 class="card-title text-uppercase text-muted mb-0">New Orders</h4>
+                                        <span class="display-3 text-dark font-weight-bold mb-0">
+                                            {{ dashboardData.newOrderCount }}
+                                        </span>
+                                    </div>
+                                    <div class="card-icon">
+                                        <div class="icon icon-shape text-white shadow">
+                                            <img width="80"
+                                                src="../../../assets/img/order1.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--  -->
+
+    

@@ -1,0 +1,132 @@
+.FX-EDIT>mat-card-header {
+      padding: 5px 10px;
+      border-bottom: 1px solid #B0C4DE;
+}
+
+.FX-EDIT>mat-card-actions {
+      padding: 5px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #B0C4DE;
+}
+
+.FX-EDIT>mat-card-content {
+      padding: 10px;
+      display: grid;
+      grid-template-columns: auto auto;
+      column-gap: 1.00em;
+      row-gap: 0.50em;
+}
+
+.FX-GC0 {
+      grid-column-start: 1;
+      grid-column-end: span 2;
+}
+
+
+.card {
+      margin: 20px !important;
+}
+
+
+.card-body_Local {
+      width: 100%;
+      padding: 20px 7px;
+}
+
+
+.inputRow {
+      display: grid;
+      grid-template-columns: 47% 47%;
+      column-gap: 10px;
+      justify-content: space-between;
+      padding: 15px;
+}
+
+.inputRow2 {
+      padding: 10px 15px;
+}
+
+
+/* .card_input_div {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 120px auto;
+      align-items: center;
+} */
+.card_input_div {
+      padding: 0px 0px 29px 0px;
+}
+
+.card_input_div label {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: rgb(0, 0, 0);
+}
+
+.card_input_div label {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: rgb(0, 0, 0);
+
+
+}
+
+.card_input {
+      height: 42px;
+      background-color: white;
+      width: 100%;
+      border: none;
+      outline: none;
+      border: 1px solid rgb(190, 190, 190);
+      font-size: 16px;
+      transition: all 0.2s;
+      padding-left: 5px;
+      padding-right: 5px;
+      border-radius: 5px;
+}
+
+.form-control {
+      height: 35px;
+      background-color: white;
+      width: 100%;
+      border: none;
+      outline: none;
+      border: 1px solid rgb(190, 190, 190);
+      font-size: 16px;
+      transition: all 0.2s;
+      padding-left: 5px;
+      padding-right: 5px;
+      border-radius: 5px;
+}
+
+.card_input::placeholder {
+      color: rgb(158, 158, 158);
+      padding-left: 5px;
+}
+
+.form-control::placeholder {
+      color: rgb(158, 158, 158);
+      padding-left: 5px;
+}
+
+.card_input:focus {
+      border-radius: 5px;
+      box-shadow: 0 0 6px 1px blue;
+      border: 1px solid white;
+}
+
+.form-control:focus {
+      border-radius: 5px;
+      box-shadow: 0 0 6px 1px blue;
+      border: 1px solid white;
+}
+
+@media screen and (max-width: 780px) {
+      .inputRow {
+            grid-template-columns: 100%;
+      }
+}

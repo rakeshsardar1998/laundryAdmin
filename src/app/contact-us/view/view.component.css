@@ -1,0 +1,21 @@
+.FX-VIEW mat-card{background-color: rgba(0, 0, 255, 0.070);}
+.FX-VIEW mat-card-header{padding:5px 10px;border-bottom:1px solid lightgray;}
+.FX-VIEW mat-card-actions{padding:4px 4px;display: flex;flex-direction: row;justify-content: space-between;gap:1.00em;
+border-top:1px solid lightgray;}
+.FX-VIEW mat-card-content{padding:10px 10px 20px 10px;background-color: white;display:grid;}
+.ATTR label{font-size:small;color:gray;padding:0;}
+.ATTR span{padding:0;}
+.ATTR{border-bottom:1px dashed  lightgray;display: flex;flex-direction: column;padding-bottom: 5px;}
+
+@media only screen and (min-width: 801px)
+{
+    .GRID{grid-template-columns: auto auto auto; column-gap: 2.00em; row-gap: 1.00em;}
+}
+@media only screen and (min-width: 400px) and (max-width: 800px)
+{
+    .GRID{grid-template-columns: auto auto; gap:1.00em;}
+}
+@media only screen and (max-width: 399px)
+{
+    .GRID{grid-template-columns: auto; gap:1.00em;}
+}

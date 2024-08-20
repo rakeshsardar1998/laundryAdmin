@@ -1,0 +1,11 @@
+<div class="file-upload-modal">
+  <h2 mat-dialog-title>File Uploaded Successfully</h2>
+  <div mat-dialog-content>
+    <p class="file-url">File URL:</p>
+    <textarea matInput [readonly]="true" class="file-url-textarea">{{ data.fileUrl }}</textarea>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button color="primary" (click)="copyLink(data.fileUrl)">Copy Link</button>
+    <button mat-button color="accent" (click)="closeDialog()">Close</button>
+  </div>
+</div>

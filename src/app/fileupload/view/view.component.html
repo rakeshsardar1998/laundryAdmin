@@ -1,0 +1,52 @@
+<div class="FX-VIEW">
+    <div class="card mx-3 my-3">
+        <!-- Loader -->
+        <div *ngIf="loading" class="loader-overlay">
+            <mat-spinner diameter="50" color="primary"></mat-spinner>
+        </div>
+        <div class="card-header">
+            <div class="fs-5 p-1">File Details</div>
+            <!-- <mat-card-subtitle>Department {{LH.DEPID}}</mat-card-subtitle> -->
+        </div>
+        <div class="card-body card-grid">
+            <div class="ATTR">
+                <label>File ID</label>
+                <span>{{LH.fileId ? LH.fileId : 'N/A'}}</span>
+            </div>
+            <div class="ATTR">
+                <label>File Name</label>
+                <span>{{LH.filename ? LH.filename : 'N/A'}}</span>
+            </div>
+            <div class="ATTR">
+                <label>Base Url</label>
+                <span>{{LH.baseurl ? LH.baseurl : 'N/A'}}</span>
+            </div>
+            <div class="ATTR">
+                <label>Mime Type</label>
+                <span>{{LH.mimetype ? LH.mimetype : 'N/A'}}</span>
+            </div>
+            <div class="ATTR">
+                <span *ngIf="linkCopied" class="copied-message">Copied!</span>
+                <label (click)="copyLink(LH.fileurl)">
+                    <!-- Clickable icon triggering the copyLink() function -->
+                    <mat-icon class="copy-icon">content_copy</mat-icon> Copy link
+                </label>
+                <!-- Displaying the file URL -->
+                <span>{{LH.fileurl ? LH.fileurl : 'N/A'}}</span>
+            </div>            
+            <!-- <div class="ATTR">
+                <label>Active Status</label>
+                <span>{{LH.isActive ? 'Yes' : 'No'}}</span>
+            </div> -->
+
+        </div>
+        <div class="card-footer BTN d-flex justify-content-between">
+            <button class="text-primary" mat-icon-button matTooltip="Go back" (click)="SY.BACK()">
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+            <button class="text-center text-danger" mat-icon-button matTooltip="Delete record" (click)="REMOVE(LH)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

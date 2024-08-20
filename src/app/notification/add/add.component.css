@@ -1,0 +1,39 @@
+
+.card-input-div {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+
+.card-input {
+    width: 100%;
+    height: 35px;
+    border: 1px solid rgb(165, 165, 165);
+    outline: none;
+    transition: all 0.4s;
+    padding: 0px 5px;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
+
+.card-input:focus {
+    border: 1px solid white;
+    box-shadow: 0 0 6px 0.5px rgb(0, 68, 255);
+}
+
+.card-input::placeholder {
+    color: rgb(148, 147, 147);
+}
+.loader-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent overlay */
+}
+

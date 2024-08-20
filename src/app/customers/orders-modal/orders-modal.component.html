@@ -1,0 +1,43 @@
+<div class="modal fade show" id="staticBackdrop" aria-modal="true" role="dialog" style="padding-right: 17px; display: block;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between">
+                <h5 class="modal-title" id="staticBackdropLabel">
+                    All Order Products
+                </h5>
+                <div>
+                    <button type="button" class="btn btn-close modal_close" (click)="closeModal()"></button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Order Id</th>
+                            <th>Delivery</th>
+                            <th>Amount</th>
+                            <th>Order Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let order of data">
+                            <tr (click)="ITEM(order)">
+                                <td>{{ order.orderId }}</td>
+                                <td>{{ order.deliverySlot }}</td>
+                                <td>{{ order.totalPayableAmount }}</td>
+                                <td>{{ order.createdAt }}</td>
+                                <td class="action"><i class="fa fa-eye" style="margin-left: 12px;
+                                    margin-top: 6px;"></i></td>
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" (click)="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

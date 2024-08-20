@@ -1,0 +1,35 @@
+<div class="container-fluid" *ngIf="FRUSR" [formGroup]="FRUSR">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 d-flex align-items-center login-form-section">
+            <div class="login">
+                <form role="form" class="pui-form" id="loginform" (ngSubmit)="LOGIN()" [formGroup]="FRUSR">
+                    <input type="hidden" name="_token" value="AvQ5VQLhJ2mHHTlswocG318sgxoGnjMbEiGNj0SF">
+                    <div class="header text-center">
+                        <img src="../../../assets/img/LAUNDRY.png" alt="Logo" height="75">
+                        <h3>Admin Login</h3>
+                        <p>This is a secure system. Please provide your login details to access the site.</p>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" id="email" name="email" class="form-control inputfield"
+                            formControlName="email" placeholder="Email">
+                        <span class="text-danger" *ngIf="FRUSR.get('email')?.invalid && FRUSR.get('email')?.touched">The email field is required.</span>
+                    </div>
+                    <div class="inputBox">
+                        <div class="input w-100 position-relative">
+                            <input type="{{ showPassword ? 'text' : 'password' }}" id="password" name="password"
+                                class="form-control inputfield" formControlName="password" placeholder="Password">
+                            <span class="eye" (click)="showHidePassword()">
+                                <i class="fas fa-eye-slash fa-eye" id="togglePassword"></i>
+                            </span>
+                        </div>
+                        <span class="text-danger" *ngIf="FRUSR.get('password')?.invalid && FRUSR.get('password')?.touched">The password field is required.</span>
+                    </div>
+                    <button type="submit" class="btn btncustom w-100" [disabled]="!FRUSR.valid">Login</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 d-none d-md-block background-image-container">
+            <!-- Background image container -->
+        </div>
+    </div>
+</div>

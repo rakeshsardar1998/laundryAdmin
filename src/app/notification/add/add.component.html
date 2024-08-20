@@ -1,0 +1,69 @@
+<div class="card mx-3 my-3" *ngIf="NOTIFICATIONFR" [formGroup]="NOTIFICATIONFR">
+    <div class="card-header">
+        <div class="fs-5 fw-normal">{{isEdit ? 'Edit Notification' : 'Add Notification'}}</div>
+        <div class="text-secondary mt-1"><small>{{isEdit ? 'Edit Notification Data ' : 'Create A Notification'}}</small></div>
+    </div>
+    <div class="card-body">
+        <div class="card-input-div">
+            <div>
+                <label for="notificationTitle">Notification Title<span>*</span></label>
+                <input type="text" class="card-input" id="notificationTitle" formControlName="notificationTitle"
+                    placeholder="Enter Notification Title">
+                <div *ngIf="NOTIFICATIONFR.get('notificationTitle')?.invalid && NOTIFICATIONFR.get('notificationTitle')?.touched"
+                    class="text-danger">Notification Title is required</div>
+            </div>
+            <div>
+                <label for="notificationMessage">Notification Message<span>*</span></label>
+                <input type="text" class="card-input" id="notificationMessage" formControlName="notificationMessage"
+                    placeholder="Enter Notification Message">
+                <div *ngIf="NOTIFICATIONFR.get('notificationMessage')?.invalid && NOTIFICATIONFR.get('notificationMessage')?.touched"
+                    class="text-danger">Notification Message is required</div>
+            </div>
+            <div>
+                <label for="Name">Notification Type<span>*</span></label>
+                <input type="text" class="card-input" id="notificationType" formControlName="notificationType"
+                    placeholder="Enter Notification Type">
+                <div *ngIf="NOTIFICATIONFR.get('notificationType')?.invalid && NOTIFICATIONFR.get('notificationType')?.touched"
+                    class="text-danger">Notification Type is required</div>
+            </div>
+            <div>
+                <label for="Name">Notification For<span>*</span></label>
+                <input type="text" class="card-input" id="notificationFor" formControlName="notificationFor"
+                    placeholder="Enter Notification for">
+                <div *ngIf="NOTIFICATIONFR.get('notificationType')?.invalid && NOTIFICATIONFR.get('notificationType')?.touched"
+                    class="text-danger">Notification for is required</div>
+            </div>
+            <div class="custom-dropdown">
+                <label for="isRead">Is Read</label>
+                <select class="card-input" id="isRead" formControlName="isRead">
+                    <option [value]="true" class="card-option">ACTIVE</option>
+                    <option [value]="false" class="card-option">INACTIVE</option>
+                </select>
+                <span class="custom-dropdown-arrow"></span>
+            </div>
+            <div>
+                <label for="Name">Expiry Date</label>
+                <input type="date" class="card-input" id="expiryDate" formControlName="expiryDate"
+                    placeholder="Enter Expiry Date">
+            </div>
+            <div>
+                <label for="Name">Priority</label>
+                <input type="text" class="card-input" id="priority" formControlName="priority"
+                    placeholder="Enter Priority">
+            </div>
+            <div class="custom-dropdown" *ngIf="isEdit">
+                <label for="role">Active Status</label>
+                <select class="card-input" id="role" formControlName="isActive">
+                    <option [value]="true" class="card-option">ACTIVE</option>
+                    <option [value]="false" class="card-option">INACTIVE</option>
+                </select>
+                <span class="custom-dropdown-arrow"></span>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer bg-light">
+        <button type="button" class="btn btn-secondary float-start" (click)="SY.BACK()">Cancel</button>
+        <button type="submit" class="btn btn-primary float-end" [disabled]="!NOTIFICATIONFR.valid"
+            (click)="SAVE()">Save</button>
+    </div>
+</div>

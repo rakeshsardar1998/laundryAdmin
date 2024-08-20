@@ -1,0 +1,51 @@
+<form [formGroup]="USRFR">
+  <mat-card class="FX-EDIT">
+
+      <mat-card-header>
+          <span matCardTitle>Location {{USRFR.value.USRNM}}</span>
+          <span matCardSubtitle>Modify Location</span>
+      </mat-card-header>
+            <div class="card">
+            <div class="card-body card-body_Local">
+                <div class="inputRow">
+                    <div class="card_input_div">
+                        <label for="USRNR">User ID</label>
+                        <input type="text" class="card_input" name="USRNR" formControlName="USRNR" placeholder="USRNR">
+
+                    </div>
+                    <div class="card_input_div">
+                        <label for="USRNR">Name</label>
+                        <input type="text" class="card_input" name="USRNR" formControlName="USRNR">
+                    </div>
+                </div>
+                <div class="inputRow">
+                    <div class="card_input_div">
+                        <label for="PHONE">PHONE</label>
+                        <input type="text" class="card_input" name="PHONE" formControlName="PHONE">
+                    </div>
+                    <div class="card_input_div">
+                        <label for="DEPID">Department</label>
+                        <input type="text" class="card_input" name="DEPID" formControlName="DEPID">
+                    </div>
+                </div>
+                <div class="inputRow">
+                    <div class="card_input_div">
+                        <label for="EMAIL">EMAIL</label>
+                        <input type="text" class="card_input" name="EMAIL" formControlName="EMAIL">
+                    </div>
+                    <div class="card_input_div">
+                        <label for="DESIG">Designation</label>
+                        <input type="text" class="card_input" name="DESIG" formControlName="DESIG">
+                    </div>
+                </div>
+            </div>
+        </div>
+      <mat-card-actions>
+          <button type="button" (click)="SY.BACK()" mat-stroked-button color="warn" tabindex="-99">
+              CANCEL
+          </button>
+          <button type="submit" [disabled]="!USRFR.valid"  color="primary" mat-raised-button (click)="SAVE()">SAVE</button>
+
+      </mat-card-actions>
+  </mat-card>
+  </form>

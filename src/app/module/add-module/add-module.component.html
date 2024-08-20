@@ -1,0 +1,38 @@
+<form [formGroup]="USRFR">
+      <div class="card">
+          <div class="card-header">
+              <div matCardTitle class="fs-5 mb-1">NEW</div>
+              <div matCardSubtitle><small>Create Module</small></div>
+          </div>
+          <div class="card-body card-body_Local">
+              <div class="inputRow">
+                  <div class="card_input_div">
+                      <label for="USRNR">Module Name</label>
+                      <input type="text" class="card_input" name="roleName" formControlName="roleName" placeholder="Id">
+  
+                  </div>
+                  <div class="card_input_div">
+                      <label for="USRNR">Serial</label>
+                      <input type="text" class="card_input" name="serial" formControlName="serial" placeholder="Id">
+  
+                  </div>
+                  <div class="card_input_div">
+                      <label for="USRNR">Active Status</label>
+                      <select class="form-control form-control-lg" type="select" name="USRNR" formControlName="USRNR"
+                          aria-placeholder="isActive">
+                          <option>true</option>
+                          <option>false</option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+          <div class="card-footer justify-content-between">
+              <button type="button" class="float-start" (click)="SY.BACK()" mat-stroked-button color="warn"
+                  tabindex="-99">
+                  CANCEL
+              </button>
+              <button type="submit" class="float-end" [disabled]="!USRFR.valid" color="primary" mat-raised-button
+                  (click)="SAVE()">SAVE</button>
+          </div>
+      </div>
+  </form>

@@ -1,0 +1,45 @@
+
+<mat-dialog-content class="dialog-content">
+  <!-- Loader -->
+  <div *ngIf="loading" class="loader-overlay">
+    <mat-spinner diameter="50" color="primary"></mat-spinner>
+  </div>
+  <div class="d-flex justify-content-end">
+    <button class="slot_button" mat-icon-button color="primary" (click)="closeDialog()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let item of data">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Day
+        </mat-panel-title>
+        <mat-panel-description>
+          {{ item.day }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="">
+        <table class="mat-elevation-z1" mat-table [dataSource]="item.slots" matSort>
+          <ng-container [matColumnDef]="column.ID" *ngFor="let column of COLS">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{column.TX}} </th>
+            <td mat-cell *matCellDef="let element">
+              <span *ngIf="column.ID === 'isActive' || column.ID === 'isDeleted'; else otherContent"
+                [style.color]="getColor(column.ID, element)">
+                {{getValue(column.ID, element)}}
+              </span>
+              <ng-template #otherContent>
+                {{element[column.ID] ? element[column.ID] : 'N/A'}}
+              </ng-template>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="SELC"></tr>
+          <tr mat-row *matRowDef="let row; columns: SELC;"></tr>
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="7">No data available</td>
+          </tr>
+        </table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-dialog-content>

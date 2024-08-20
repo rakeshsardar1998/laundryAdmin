@@ -1,0 +1,15 @@
+.file-upload-modal {
+    max-width: 400px;
+    padding: 20px;
+  }
+  
+  .file-url {
+    margin-bottom: 10px;
+  }
+  
+  .file-url-textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+  }
+  
